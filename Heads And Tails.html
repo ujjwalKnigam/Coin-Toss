@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Heads and Tail.css">
+    <title>Coin Toss</title>
+</head>
+<body>
+    <div align="center" class="heading">
+        <h1>Toss The Coin</h1>
+    </div>
+    <div align="center" id="buttons">
+        <button class='btn btn-outline-danger' type="button" onclick="coin_toss()">Click Here!!!</button>
+        <br>
+        <br>
+        <img src="first.png" alt="" id="image">
+    </div>
+    <div align="center">
+        <p class="results"></p>
+    </div>
+    <script>
+        var name1 = prompt("First Person Enter your name : ")
+        var name2 = prompt("Second Person Enter your name : ")
+        var choice = prompt("First Person Enter your choice : ")
+        var name11 = name1.slice(0,1)
+        var name12 = name1.slice(1,)
+        var name21 = name2.slice(0,1)
+        var name22 = name2.slice(1,)
+        name11 = name11.toUpperCase()
+        name12 = name12.toLowerCase()
+        name21 = name21.toUpperCase()
+        name22 = name22.toLowerCase()
+        function coin_toss()
+        {
+            var number1 = 1 + Math.floor(Math.random()*2)
+            document.querySelector("#image").src=String(number1)+".png"
+            if (choice == "Heads" || choice == "heads")
+            {
+                if (number1 == 1)
+                {
+                    document.querySelector(".results").innerHTML = (name11 + name12) +" Wins!!!"
+                }
+                else
+                {
+                    document.querySelector(".results").innerHTML = (name21+name22)+" Wins!!!"
+                }
+            }
+            else if (choice == "Tails" || choice == "tails")
+            {
+                if (number1 == 2)
+                {
+                    document.querySelector(".results").innerHTML=(name11+name12)+" Wins!!!"
+                }
+                else
+                {
+                    document.querySelector(".results").innerHTML=(name21+name22)+" Wins!!!"
+                }
+            }
+        }
+    </script>
+</body>
+</html>
